@@ -1,20 +1,8 @@
 import {FC} from 'react'
 import Link from 'next/link'
+import { Events } from '../../types/collection'
 
-interface Props {
-  event:Event
-}
-
-interface Event {
-    id: number;
-    title: string;
-    date: string;
-    location: string;
-    description: string;
-    image: string;
-}
-
-const EventItem: FC<Props> = ({ event }) => {
+const EventItem = ({event}:any) => {
     const formattedDate = new Date(event.date).toLocaleDateString('en-US', {
     day: 'numeric',
     month: 'short',
